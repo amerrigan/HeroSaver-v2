@@ -11,7 +11,7 @@ Please **Always** think about the **developers** of such websites and try to **s
   3. Paste the following
 
 ```
-var xhr=new XMLHttpRequest;xhr.open("get","https://raw.githubusercontent.com/lillypath869/Herosaver/master/dist/saver.min.js",true);xhr.onreadystatechange=function(){if(xhr.readyState==4){var script=document.createElement("script");script.type="text/javascript";script.text=xhr.responseText;document.body.appendChild(script)}};xhr.send(null);
+var xhr=new XMLHttpRequest;xhr.open("get","https://raw.githubusercontent.com/AlexPicaso/HeroSaver-v2/master/dist/saver.min.js",true);xhr.onreadystatechange=function(){if(xhr.readyState==4){var script=document.createElement("script");script.type="text/javascript";script.text=xhr.responseText;document.body.appendChild(script)}};xhr.send(null);
 ```
 
 ### ~~Loading via Greecemonkey or other script loader~~
