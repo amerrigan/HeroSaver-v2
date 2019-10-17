@@ -21,7 +21,6 @@ finalizeMesh.prototype = {
         var mrot = new Matrix4().makeRotationX(90 * Math.PI / 180);
 
         var msca = new Matrix4().makeScale(10, 10, 10);
-
         if (geometry.isBufferGeometry) {
             var newGeometry = geometry.clone(geometry);
             var vertices = geometry.getAttribute('position');
@@ -33,7 +32,8 @@ finalizeMesh.prototype = {
                     vertex.y = vertices.getY(i);
                     vertex.z = vertices.getZ(i);
 
-                    if (geometry.skinIndexNames == undefined) {
+                    if (geometry.skinIndexNames == undefined
+                      || geometry.skinIndexNames == 0) {
                         vertex.applyMatrix4(mesh.matrixWorld).applyMatrix4(mrot).applyMatrix4(msca);
                         newGeometry.attributes.position.setXYZ(i, vertex.x, vertex.y, vertex.z);
                     } else {
