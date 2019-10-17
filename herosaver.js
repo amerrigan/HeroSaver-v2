@@ -41,8 +41,8 @@ function init() {
 								//Get pose from skeleton
                                 var bufferGeometry = geometry.clone();
                                 geometry = new RK.Geometry().fromBufferGeometry(geometry);
-                                var skinIndex = bufferGeometry.getAttribute('skinIndex');
-                                var skinWeight = bufferGeometry.getAttribute('skinWeight');
+                                var skinIndex = bufferGeometry.getAttribute('skinIndex0');
+                                var skinWeight = bufferGeometry.getAttribute('skinWeight0');
                                 var morphTarget = bufferGeometry.getAttribute('morphTarget0');
                                 var mtcount = 0;
                                 while(typeof morphTarget !== 'undefined') {
@@ -200,13 +200,13 @@ function init() {
     }
 
     var model = CK.character;
-	var characterArea_hook = ".characterArea";
-	var menu_style = {"margin-left": "20px", "font-size": "1.4em", "color" : "rgba(255, 255, 255, 0.8)", "cursor" : "pointer" };
+	var characterArea_hook = ".content-side:first";
+	var menu_style = {"margin-left": "20px", "font-size": "1.2em", "cursor" : "pointer" };
 	
 	var character_area, stl, stl_base, sjson, ljson, labeljson;
 	
 	stl = 				jQuery("<a />").css(menu_style).text("Export Figure");
-	stl_base = 			jQuery("<a />").css(menu_style).text("Export Model (STL)");
+	stl_base = 			jQuery("<a />").css(menu_style).css({"margin-left": "125px"}).text("Export Model (STL)");
 	sjson = 			jQuery("<a />").css(menu_style).text("Export (JSON)");
 	ljson  = 			jQuery("<input/>").attr({"type": "file", "id": "ljson"}).css({"display":"none"}).text("Import (JSON)");
 	labeljson  = 		jQuery("<label/>").attr({"for": "ljson"}).css(menu_style).text("Import (JSON)");
